@@ -23,11 +23,6 @@ exports.config = {
             // '--no-sandbox',
             // '--disable-setuid-sandbox',
           ],
-        },
-        proxy: {
-          proxyType: "manual",
-          httpProxy: "internal-proxy.mgt.naturabanking.com:8888",
-          sslProxy: "internal-proxy.mgt.naturabanking.com:8888"
         }
       },
     },
