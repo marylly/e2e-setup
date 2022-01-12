@@ -1,0 +1,15 @@
+{
+  "name": "e2e-setup",
+  "version": "1.0.0",
+  "description": "E2E Test Stack Setuo",
+  "main": "app.js",
+  "scripts": {
+    "test:e2e": "codeceptjs run --steps --verbose --config=./test/chrome.conf.js"
+  },
+  "author": "Marylly Araújo Silva",
+  "license": "MIT",
+  "dependencies": {
+    "codeceptjs": "^3.2.3",
+    "webdriverio": "^7.16.13"
+  }
+}

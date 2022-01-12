@@ -1,0 +1,38 @@
+exports.config = {
+  tests: './*_test.js',
+  output: './output',
+  helpers: {
+    WebDriver: {
+      url: 'https://pokeapi.co/api/v2/pokemon/ditto',
+      host: '0.0.0.0',
+      browser: 'chrome',
+      smartWait: 10000,
+      restart: false,
+      waitForTimeout: 10000,
+      timeouts: {
+        script: 60000,
+        'page load': 60000,
+      },
+      coloredLogs: true,
+      desiredCapabilities: {
+        chromeOptions: {
+          // https://peter.sh/experiments/chromium-command-line-switches/
+          args: [
+            '--headless',
+            '--disable-gpu', // Temporarily needed if running headless on Windows
+            // '--no-sandbox',
+            // '--disable-setuid-sandbox',
+          ],
+        },
+        proxy: {
+          proxyType: "manual",
+          httpProxy: "internal-proxy.mgt.naturabanking.com:8888",
+          sslProxy: "internal-proxy.mgt.naturabanking.com:8888"
+        }
+      },
+    },
+  },
+  bootstrap: false,
+  mocha: {},
+  name: 'codeceptjs-docker',
+};
